@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+// Imports
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
 
@@ -9,36 +9,26 @@ import {
     signOut,
     onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyChViHU9-o0bPiKxVrakSgrrGUBrcBs39M",
-    authDomain: "apiweb-a6b44.firebaseapp.com",
-    projectId: "apiweb-a6b44",
-    storageBucket: "apiweb-a6b44.appspot.com",
-    messagingSenderId: "922422199542",
-    appId: "1:922422199542:web:5af8c0fac93108818398d7",
-    measurementId: "G-DW5CM9575Y"
+    apiKey: "AIzaSyCF1CUE1e_uoP0XhnvifInOiHs1f-rMJJs",
+    authDomain: "apiwebmario.firebaseapp.com",
+    projectId: "apiwebmario",
+    storageBucket: "apiwebmario.appspot.com",
+    messagingSenderId: "377429199130",
+    appId: "1:377429199130:web:98e9dbb2faaec11a51c4a3",
+    measurementId: "G-NJKJND0HXW"
 };
 
-// Initialize Firebase
+// Initialize
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-
-//metodo de autenticacion de usuario
-export const login_auth = (email, password) =>
-    signInWithEmailAndPassword(auth, email, password)
-
-//cerrar sesion del usuario
+//cerrar sesion
 export const log_out = () =>
     signOut(auth)
-
 
 export const userState = () => {
     onAuthStateChanged(auth, (user) => {
@@ -49,3 +39,8 @@ export const userState = () => {
         }
     });
 }
+
+//metodo de autenticacion de usuario
+export const login_auth = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password)
+

@@ -1,13 +1,13 @@
-import { login_auth } from "../Services/firebase.js";
+import { login_auth } from "../Controllers/firebase.js";
 
-const evento = document.getElementById("login_btn");
+const clika = document.getElementById("login_btn");
 
 async function validar() {
     const email = document.getElementById('usuario').value;
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('contraseña').value;
 
     if (email.trim() === '' || password.trim() === '') {
-        alert("Debe llenar los campos de usuario y el de contraseña.");
+        alert("No pueden haber campos vacios.");
         return;
     }
 
@@ -19,14 +19,14 @@ async function validar() {
             window.location.href = "Templates/home.html";
         } else {
             console.log("Sesión " + email + " no validada");
-            alert("Error de usuario, verifique usuario y/o contraseña.");
+            alert("Credenciales invalidas, usuario y/o contraseña incorrectas.");
         }
     } catch (error) {
         console.error("Error al autenticar:", error);
-        alert("Error de usuario, verifique usuario y/o contraseña.");
+        alert("Credenciales invalidas, usuario y/o contraseña incorrectas.");
     }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    evento.addEventListener('click', validar);
+    clika.addEventListener('click', validar);
 });

@@ -1,8 +1,8 @@
-import { userState, log_out } from "../Services/firebase.js";
+import { userState, log_out } from "../Controllers/firebase.js";
 
 userState()
 
-const sesion = document.getElementById('btn_log_out')
+const sesion = document.getElementById('btn_logout')
 
 async function cerrarSesion(){
     const verificacion = log_out()
